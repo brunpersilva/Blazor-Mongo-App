@@ -1,6 +1,8 @@
-﻿namespace AppLibrary.DataAccess;
+﻿using AppLibrary.DataAccess.Interfaces;
 
-public class DbConnection
+namespace AppLibrary.DataAccess;
+
+public class DbConnection : IDbConnection
 {
     private readonly IConfiguration _config;
     private readonly IMongoDatabase _db;
