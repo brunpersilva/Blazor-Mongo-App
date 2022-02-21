@@ -1,6 +1,4 @@
-﻿using AppLibrary.DataAccess.Interfaces;
-
-namespace AppLibrary.DataAccess;
+﻿namespace AppLibrary.DataAccess;
 
 public class DbConnection : IDbConnection
 {

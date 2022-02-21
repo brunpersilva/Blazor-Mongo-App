@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using AppLibrary.DataAccess;
+using AppLibrary.DataAccess.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ServicesInjection
 {
@@ -6,7 +8,11 @@ namespace ServicesInjection
     {
         public static void ConfigureServices(this IServiceCollection services)
         {
-            
+            services.AddSingleton<IDbConnection, DbConnection>();
+            services.AddSingleton<ICategoryData, MongoCategoryData>();
+            services.AddSingleton<IStatusData, MongoStatusData>();
+            services.AddSingleton<ISuggestionData, MongoSuggestionData>();
+            services.AddSingleton<IUserData, MongoUserData>();
         }
     }
 }
